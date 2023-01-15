@@ -3,13 +3,20 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import HomePage from './views/homePage/HomePage';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <HomePage/>
-  </React.StrictMode>
+  <>
+  <BrowserRouter>
+     <Routes>
+       <Route path="/" component={HomePage}/>
+  
+     </Routes>
+   </BrowserRouter>
+   <HomePage/>  
+   </>
 );
 
 // If you want to start measuring performance in your app, pass a function
