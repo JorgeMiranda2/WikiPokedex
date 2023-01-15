@@ -1,4 +1,4 @@
-import PokeCardContainers from "../../components/common/PokeCardContainer";
+import PokeCardContainer from "../../components/common/PokeCardContainer";
 import NavBar from "../../components/layout/NavBar" 
 import PokeSearch from "../../components/common/PokeSearch";
 const HomePage = () => {
@@ -6,7 +6,7 @@ const HomePage = () => {
     <div>
       <NavBar/>
       <PokeSearch/>
-      <PokeCardContainers/>
+      <PokeCardContainer/>
 
     </div>
    );
