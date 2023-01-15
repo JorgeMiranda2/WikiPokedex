@@ -1,8 +1,14 @@
+import '../../Styles/ComponentsCss/PokeSearch.scss';
 const PokeSearch = () => {
     return ( 
-    <div>
-        <h2>Search</h2>   
-       </div>
+        <section class="main">
+        <h2 class="main__title">¿Qué Pokemon buscas?</h2>
+        <input
+          class="input"
+          type="text"
+          placeholder="Buscar... (Escribe el nombre del Pokemon)"
+        />
+      </section>
         );
 }
  
