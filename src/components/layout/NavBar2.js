@@ -14,10 +14,10 @@ const NavBar2 = () => {
              <nav className="navbar">
       <div className="container">
         <div className="logo">
-          <h2>awa</h2>
+          <h2>WikiPokedex</h2>
         </div>
         <div className="menu-icon" onClick={handleShowNavbar}>
-        <h2>owo</h2>
+        <h2>☰</h2>
         </div>
         <div className={`nav-elements  ${showNavbar && 'active'}`}>
           <ul>
