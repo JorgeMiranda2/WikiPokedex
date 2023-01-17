@@ -1,7 +1,8 @@
+
 const PokeCard = () => {
     return ( 
         <div>
-         <h2>Pokecard</h2>   
+         <h2>card</h2>   
         </div>
      );
 }
