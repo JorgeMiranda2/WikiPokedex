@@ -1,11 +1,19 @@
-import PokeCard from "./PokeCard";
-import {GetPokeInfo} from "../hooks/PokeInfo";
-const PokeCardContainers = () => {
-    const completeInfo = GetPokeInfo();
+import PokeCard from "./PokeCard.js";
+import {GetPokeInfo} from "../hooks/ApiGetRequest";
+const PokeCardContainers = ({pokedata}) => {
+    
     return ( 
         <div>
-            <h2>{completeInfo}</h2>
-            <PokeCard/>
+      
+            {pokedata.map((pokemon)=>{
+
+            return(
+                <div>
+         <PokeCard Url={pokemon.url}/>
+     </div>
+            );
+         
+            })}
         </div>
      );
 }
