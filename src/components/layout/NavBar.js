@@ -1,7 +1,7 @@
 import "../../Styles/ComponentsCss/NavBar2.scss";
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-const NavBar2 = () => {
+const NavBar = () => {
 
         const [showNavbar, setShowNavbar] = useState(false)
 
@@ -44,4 +44,4 @@ const NavBar2 = () => {
      );
 }
  
-export default NavBar2;
+export default NavBar;
