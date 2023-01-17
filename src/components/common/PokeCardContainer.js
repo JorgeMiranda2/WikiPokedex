@@ -1,9 +1,21 @@
+import "../../Styles/ComponentsCss/PokeCardContainer.css";
 import PokeCard from "./PokeCard";
-const PokeCardContainers = () => {
+
+export const PokeCardContainers = ({results}) => {
     return ( 
-        <div>
-            <h2>PokeCardContainers</h2>
-            <PokeCard/>
+        <div className="container">
+         <ul>
+            {
+                results.map( p=>
+                    <li>
+                        <PokeCard url={p.url}/>
+                    </li>
+                    )
+            }
+         </ul>
+           
+            
+            
         </div>
      );
 }

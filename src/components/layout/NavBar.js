@@ -1,4 +1,4 @@
-import "../../Styles/ComponentsCss/NavBar2.scss";
+import "../../Styles/ComponentsCss/NavBar.scss";
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 const NavBar = () => {
