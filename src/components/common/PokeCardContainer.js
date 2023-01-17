@@ -10,7 +10,10 @@ const PokeCardContainers = ({pokedata}) => {
 
             return(
                 <div>
-         <PokeCard Url={pokemon.url}/>
+                    <ul key={pokemon.name}>
+                    <li><PokeCard Url={pokemon.url}/></li>
+                    </ul>
+    
       
      </div>
             );

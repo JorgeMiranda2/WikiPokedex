@@ -5,7 +5,7 @@ const PokeCard = ({Url}) => {
 
 
 const {loading,data} = ApiGetRequest(Url);
-console.log(data);
+
     return ( 
         <div>
             
