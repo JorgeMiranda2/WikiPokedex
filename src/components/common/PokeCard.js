@@ -1,4 +1,6 @@
 import { ApiGetRequest } from "../hooks/ApiGetRequest";
+import '../../../src/Styles/ComponentsCss/PokeCard.scss';
+import pokemon from '../../assets/pokemon.png';
 const PokeCard = ({Url}) => {
 
 
@@ -27,9 +29,10 @@ console.log(data);
                          )
             })}
             </ul>
-
+           
         </div>
         }  
+       
         </div>
      );
 }

@@ -1,4 +1,5 @@
 import PokeCard from "./PokeCard.js";
+import '../../../src/Styles/ComponentsCss/PokeCard.scss';
 import {GetPokeInfo} from "../hooks/ApiGetRequest";
 const PokeCardContainers = ({pokedata}) => {
     
@@ -10,6 +11,7 @@ const PokeCardContainers = ({pokedata}) => {
             return(
                 <div>
          <PokeCard Url={pokemon.url}/>
+      
      </div>
             );
          
