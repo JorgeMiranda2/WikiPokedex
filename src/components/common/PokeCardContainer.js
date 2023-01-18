@@ -1,21 +1,24 @@
-import "../../Styles/ComponentsCss/PokeCardContainer.css";
-import PokeCard from "./PokeCard";
-
-export const PokeCardContainers = ({results}) => {
+import PokeCard from "./PokeCard.js";
+import '../../../src/Styles/ComponentsCss/PokeCard.scss';
+import {GetPokeInfo} from "../hooks/ApiGetRequest";
+const PokeCardContainers = ({pokedata}) => {
+    
     return ( 
-        <div className="container">
-         <ul>
-            {
-                results.map( p=>
-                    <li>
-                        <PokeCard url={p.url}/>
-                    </li>
-                    )
-            }
-         </ul>
-           
-            
-            
+        <div>
+      
+            {pokedata.map((pokemon)=>{
+
+            return(
+                <div>
+                    <ul key={pokemon.name}>
+                    <li><PokeCard Url={pokemon.url}/></li>
+                    </ul>
+    
+      
+     </div>
+            );
+         
+            })}
         </div>
      );
 }
