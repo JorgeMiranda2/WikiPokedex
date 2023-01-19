@@ -1,8 +1,11 @@
 import PokeCardContainer from "../../components/common/PokeCardContainer";
 import NavBar from "../../components/layout/NavBar"; 
+import Footer from "../../components/common/Footer"; 
+
 import PokeSearch from "../../components/common/PokeSearch";
 import React, { useEffect, useState } from 'react';
 import { ApiGetRequest } from "../../components/hooks/ApiGetRequest";
+
 
 
 
@@ -13,26 +16,33 @@ const [pokemonUrl, setPokemonUrl] = useState("https://pokeapi.co/api/v2/pokemon?
 const {loading,data} = ApiGetRequest(pokemonUrl);
 loading?console.log("Cargando"):console.log(data.results);
 
-  return ( 
+  return (
     <div>
       <NavBar />
-      <PokeSearch/>
+      <PokeSearch />
       {
-            loading
-            ?
-            <h1>Cargando</h1>
-            :
-            <div>
-              
-          <PokeCardContainer pokedata={data.results}/>
-            </div>
-          }
+        loading
+          ?
+          <h1>Cargando</h1>
+          :
+          <div>
+
+            <PokeCardContainer pokedata={data.results} />
+          </div>
+      }
+      
+
 
       
-     
-
+      <div>
+        <Footer/>
+      </div>
+      
+      
+      
     </div>
-   );
+    
+  );
 }
  
 export default HomePage;
