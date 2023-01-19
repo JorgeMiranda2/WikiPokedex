@@ -23,17 +23,17 @@ const Footer = ()=>{
 
                             </img>
                         </Link>
-                        <ul className="col-12 col-md-3 list-unstyled" >
+                        <ul className="col-12 col-md-3 list-unstyled align-self-center" >
                             <li className="font-weight-bold text-center">Pokemon</li>
                             <li className="text-center">En este sitio encontrarás información sobre todos los Pokemons</li>
                         </ul>
-                        <ul className="col-12 col-md-3 list-unstyled" >
+                        <ul className="col-12 col-md-3 list-unstyled align-self-center" >
                             <li className="font-weight-bold text-center">Enlaces</li>
                             <li className="text-center">
                                 <Link to="/" className="text-reset">Pokemon</Link>
                             </li>
                         </ul>
-                        <ul className="col-12 col-md-3 list-unstyled">
+                        <ul className="col-12 col-md-3 list-unstyled align-self-center">
                             <li className="font-weight-bold text-center">Siguenos</li>
                             <li className="d-flex justify-content-between">
                                 <i className="bi bi-facebook"></i>
