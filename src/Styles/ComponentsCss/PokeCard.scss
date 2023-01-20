@@ -1,4 +1,4 @@
-.card {
+.pokecard {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -27,11 +27,11 @@
     }
   }
 
-.card-body{
+.card_body{
   width: 100%;
   height: auto;
 }
-.card-bodyimg{
+.card_bodyimg{
     
     width: 100%;
     height: auto;
@@ -39,22 +39,23 @@
     z-index: 1;
     
 }
-.card-title {
+.card_title {
     
     text-align: center;
     z-index: 1;
-    color: rgb(3, 3, 3);
+    color: rgb(2, 1, 1);
     font-size: 1em;
 }
 
-.card-footer{
+.card_footer{
     text-align: center;
+    color: black;
 }
-.card-external{
+.card_external{
   width: 100%;
   height: 100%;
 }
-.list-container{
+.list_container{
   position: relative;
   bottom: 20px;
   display: flex;
@@ -63,7 +64,7 @@
   list-style-type: none; /* hide bullet points */
   padding-left: 0;
 }
-.list-type{
+.list_type{
   
   text-align: center;
 }

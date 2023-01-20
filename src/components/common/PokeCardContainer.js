@@ -4,13 +4,13 @@ import {GetPokeInfo} from "../hooks/ApiGetRequest";
 const PokeCardContainers = ({pokedata}) => {
     
     return ( 
-        <div className="card-container">
+        <div className="card_container">
       
             {pokedata.map((pokemon)=>{
 
             return(
 
-                <div className="card-elements">
+                <div className="card_elements">
                     
                     <PokeCard Url={pokemon.url}/>
                     
