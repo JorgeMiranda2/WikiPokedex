@@ -1,0 +1,71 @@
+.pokecard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: #07182E;
+    position: relative;
+    
+    
+    place-items: center;
+    overflow: hidden;
+    border-radius: 20px;
+    
+  }
+  
+
+  
+  @keyframes rotBGimg {
+    from {
+      transform: rotate(0deg);
+    }
+  
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+.card_body{
+  width: 100%;
+  height: auto;
+}
+.card_bodyimg{
+    
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    z-index: 1;
+    
+}
+.card_title {
+    
+    text-align: center;
+    z-index: 1;
+    color: rgb(2, 1, 1);
+    font-size: 1em;
+}
+
+.card_footer{
+    text-align: center;
+    color: black;
+}
+.card_external{
+  width: 100%;
+  height: 100%;
+}
+.list_container{
+  position: relative;
+  bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style-type: none; /* hide bullet points */
+  padding-left: 0;
+}
+.list_type{
+  
+  text-align: center;
+}
+

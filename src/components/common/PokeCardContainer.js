@@ -1,25 +1,28 @@
 import PokeCard from "./PokeCard.js";
-import '../../../src/Styles/ComponentsCss/PokeCard.scss';
+import '../../../src/Styles/ComponentsCss/PokeCardContainer.scss';
 import {GetPokeInfo} from "../hooks/ApiGetRequest";
 const PokeCardContainers = ({pokedata}) => {
     
     return ( 
-        <div>
+        <div className="card_container">
       
             {pokedata.map((pokemon)=>{
 
             return(
-                <div>
-                    <ul key={pokemon.name}>
-                    <li><PokeCard Url={pokemon.url}/></li>
-                    </ul>
+
+                <div className="card_elements">
+                    
+                    <PokeCard Url={pokemon.url}/>
+                    
+                    
     
       
-     </div>
+                </div>
             );
          
             })}
         </div>
+        
      );
 }
  

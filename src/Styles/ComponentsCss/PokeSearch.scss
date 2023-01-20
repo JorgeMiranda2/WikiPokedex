@@ -3,6 +3,7 @@ body, h1 {
     background: -webkit-gradient(linear, left top, left bottom, from(#1c2b2d), to(#1b1a17));
     background: linear-gradient(#1c2b2d, #1b1a17);
     font-family: 'Mali', cursive;
+    z-index: 0;
   }
   
   .main {

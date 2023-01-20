@@ -11,7 +11,7 @@ import { ApiGetRequest } from "../../components/hooks/ApiGetRequest";
 
 const HomePage = () => {
   //Trayendo datos de la Api usando la Url
-const [pokemonUrl, setPokemonUrl] = useState("https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0");
+const [pokemonUrl, setPokemonUrl] = useState("https://pokeapi.co/api/v2/pokemon");
 //?limit=100000&offset=0
 const {loading,data} = ApiGetRequest(pokemonUrl);
 loading?console.log("Cargando"):console.log(data.results);
