@@ -25,7 +25,7 @@
   
 
   
-  @keyframes rotBGimg {
+  /*@keyframes rotBGimg {
     from {
       transform: rotate(0deg);
     }
@@ -34,7 +34,8 @@
       transform: rotate(360deg);
     }
   }
-
+  */
+  
 .card_body{
   width: 100%;
   height: auto;
@@ -48,17 +49,23 @@
     
 }
 .card_title {
-    
+    font-family: 'Mali', cursive;
     text-align: center;
     z-index: 1;
     color: rgb(2, 1, 1);
-    font-size: 1em;
+    font-size: 1.5em;
+    font-weight: bold;
+    
+}
+.card_title::first-letter{
+  text-transform: uppercase;
 }
 
 .card_footer{
     text-align: center;
     color: black;
 }
+
 .card_external{
   width: 100%;
   height: 100%;
@@ -75,5 +82,8 @@
 .list_type{
   
   text-align: center;
+  font-family: 'Mali', cursive;
 }
-
+.list_type::first-letter{
+  text-transform: uppercase;
+}

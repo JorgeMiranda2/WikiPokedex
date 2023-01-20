@@ -1,7 +1,7 @@
 body, h1 {
     margin: 0;
     background: -webkit-gradient(linear, left top, left bottom, from(#1c2b2d), to(#1b1a17));
-    background: linear-gradient(#1c2b2d, #1b1a17);
+    background: linear-gradient(#fef7e5, #fef7e5);
     font-family: 'Mali', cursive;
     z-index: 0;
   }
@@ -24,12 +24,12 @@ body, h1 {
   }
   
   .main__title {
-    color: white;
+    color: rgb(0, 0, 0);
     font-size: 25px;
   }
   
   .categories__title {
-    color: #ffff;
+    color: rgb(0, 0, 0);
     font-size: 16px;
     position: absolute;
     padding-left: 30px;
@@ -39,28 +39,28 @@ body, h1 {
   .input {
     font-family: 'Mali', cursive;
     font-size: 16px;
-    border: 2px solid white;
+    border: 2px solid rgb(0, 0, 0);
     border-radius: 30px;
     padding: 0 20px;
     background-color: rgba(255, 255, 255, 0.1);
     height: 50px;
     width: 70%;
     outline: none;
-    color: white;
+    color: rgb(0, 0, 0);
   }
   
   .input::-webkit-input-placeholder {
-    color: white;
+    color: rgb(0, 0, 0);
   }
   
   .input:-ms-input-placeholder {
-    color: white;
+    color: rgb(0, 0, 0);
   }
   
   .input::-ms-input-placeholder {
-    color: white;
+    color: rgb(0, 0, 0);
   }
   
   .input::placeholder {
-    color: white;
+    color: rgb(0, 0, 0);
   }

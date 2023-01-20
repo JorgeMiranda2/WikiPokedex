@@ -1,10 +1,22 @@
 import { ApiGetRequest } from "../hooks/ApiGetRequest";
 import '../../../src/Styles/ComponentsCss/PokeCard.scss';
-
+import { colors } from "../../consts/PokeColors";
 const PokeCard = ({Url}) => {
 
 
 const {loading,data} = ApiGetRequest(Url);
+function getColor(slot){
+    if(data!=null && slot !=null){
+        let color = colors.find(element=>element.poketype=== data.types[slot].type.name);
+        if(color!=null){
+            
+            return color.color;
+        } else{
+            console.log("Tipo no reconocido");
+    }
+    return "red";
+}
+}
 
     return ( 
         <div className="card_external">
@@ -39,9 +51,9 @@ const {loading,data} = ApiGetRequest(Url);
                     <p className="card_text"></p>
                     <ul className="list_container">
                 {
-                data.types.map((type)=> {
+                data.types.map((type,index)=> {
                     return(
-                        <li className="list_type">{type.type.name}</li>
+                        <li style={{background:getColor(index)}} key={index} className="list_type">{type.type.name}</li>
 
                     )
                 })
@@ -51,7 +63,7 @@ const {loading,data} = ApiGetRequest(Url);
             
             
                 
-                
+            {console.log(colors)}    
                 
                 
                 

@@ -7,7 +7,7 @@ const PokeCardContainers = ({pokedata}) => {
         <div className="card_container">
       
             {pokedata.map((pokemon)=>{
-
+            
             return(
 
                 <div className="card_elements">
