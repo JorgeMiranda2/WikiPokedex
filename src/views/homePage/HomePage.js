@@ -1,6 +1,6 @@
 import PokeCardContainer from "../../components/common/PokeCardContainer";
 import NavBar from "../../components/layout/NavBar"; 
-import Footer from "../../components/common/Footer"; 
+import Footer from "../../components/layout/Footer"; 
 
 import PokeSearch from "../../components/common/PokeSearch";
 import React, { useEffect, useState } from 'react';
@@ -11,7 +11,7 @@ import { ApiGetRequest } from "../../components/hooks/ApiGetRequest";
 
 const HomePage = () => {
   //Trayendo datos de la Api usando la Url
-const [pokemonUrl, setPokemonUrl] = useState("https://pokeapi.co/api/v2/pokemon?limit=50&offset=0");
+const [pokemonUrl, setPokemonUrl] = useState("https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0");
 //?limit=100000&offset=0
 const {loading,data} = ApiGetRequest(pokemonUrl);
 loading?console.log("Cargando"):console.log(data.results);
