@@ -63,7 +63,7 @@ function getColor(slot){
             
             
                 
-            {console.log(colors)}    
+            
                 
                 
                 
