@@ -36,7 +36,9 @@ const Pokemon = (props) => {
               return (
                 <div key={idx} className="pokemon-type-text">
                   {type.type.name}
+                  <li style={{background:getColor(idx)}} key={idx} className="list_type">{type.type.name}</li>
                 </div>
+                
               );
             })}
           </div>
