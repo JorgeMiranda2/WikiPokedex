@@ -1,5 +1,7 @@
 import React, { useContext } from "react";
 import FavoriteContext from "../layout/favoritesContext";
+import {colors} from "./color";
+
 
 const Pokemon = (props) => {
   const { pokemon } = props;
@@ -15,6 +17,19 @@ const Pokemon = (props) => {
     e.preventDefault();
     updateFavoritePokemons(pokemon.name);
   };
+
+  function getColor(slot){
+    if(pokemon!=null && slot !=null){
+        let color = colors.find(element=>element.poketype=== pokemon.types[slot].type.name);
+        if(color!=null){
+            
+            return color.color;
+        } else{
+            console.log("Tipo no reconocido");
+    }
+    return "red";
+}
+}
 
   return (
     <div className="pokemon-card">
@@ -35,8 +50,8 @@ const Pokemon = (props) => {
             {pokemon.types.map((type, idx) => {
               return (
                 <div key={idx} className="pokemon-type-text">
-                  {type.type.name}
-                  <li style={{background:getColor(idx)}} key={idx} className="list_type">{type.type.name}</li>
+                  
+                  <li style={{background:getColor(idx), listStyle:"none"}} key={idx} className="list_type">{type.type.name}</li>
                 </div>
                 
               );

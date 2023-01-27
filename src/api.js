@@ -22,4 +22,6 @@ export const searchPokemon = async (pokemon) => {
       const data = await response.json();
       return data;
     } catch (err) {}
-  };
+  }
+
+  
