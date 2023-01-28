@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import FavoriteContext from "../layout/favoritesContext";
-import {colors} from "./color";
+import {colors} from "../../consts/PokeColors";
 
 
 const Pokemon = (props) => {
