@@ -1,47 +1,23 @@
-import "../../Styles/ComponentsCss/NavBar.scss";
-import { useState } from 'react';
-import { NavLink } from 'react-router-dom';
-const NavBar = () => {
+import React from "react";
+import FavoriteContext from "../layout/favoritesContext";
 
-        const [showNavbar, setShowNavbar] = useState(false)
+const { useContext } = React;
 
-    const handleShowNavbar = () => {
-        setShowNavbar(!showNavbar)
-      }
-    
-    return ( 
-        <div>
-             <nav className="navbar">
-      <div className="container">
-        <div className="logo">
-          <h2>WikiPokedex</h2>
-        </div>
-        <div className="menu-icon" onClick={handleShowNavbar}>
-        <h2>☰</h2>
-        </div>
-        <div className={`nav-elements  ${showNavbar && 'active'}`}>
-          <ul>
-            <li>
-              <a to="/">Home</a>
-            </li>
-            <li>
-              <a to="/blog">Blog</a>
-            </li>
-            <li>
-              <a to="/projects">Projects</a>
-            </li>
-            <li>
-              <a to="/about">About</a>
-            </li>
-            <li>
-              <a to="/contact">Contact</a>
-            </li>
-          </ul>
-        </div>
+const Navbar = () => {
+  const { favoritePokemons } = useContext(FavoriteContext);
+
+  let imgUrl =
+    "https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png";
+
+  return (
+    <nav>
+      <div />
+      <div>
+        <img src={imgUrl} alt="pokeapi-logo" className="navbar-image" />
       </div>
+      <div>&#10084;&#65039; {favoritePokemons.length}</div>
     </nav>
-        </div>
-     );
-}
- 
-export default NavBar;
+  );
+};
+
+export default Navbar;
