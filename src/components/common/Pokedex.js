@@ -1,9 +1,15 @@
-import React from "react";
+import { set } from "lodash";
+import FavoriteContext from "../layout/favoritesContext";
+import React, { useContext, useState } from "react";
 import Pagination from "./Pagination";
 import Pokemon from "./PokeCard";
 
 const Pokedex = (props) => {
-  const { pokemons, page, setPage, total, loading } = props;
+  const { pokemons, page, setPage, total, loading, fetchPokemons } = props;
+
+  const [isFavorite, setIsFavorite] = useState(false);
+
+  const { favoritePokemons } = useContext(FavoriteContext);
 
   const lastPage = () => {
     const nextPage = Math.max(page - 1, 0);
@@ -15,10 +21,16 @@ const Pokedex = (props) => {
     setPage(nextPage);
   };
 
+  const showFavorites = () => {
+   setIsFavorite(!isFavorite);
+    isFavorite ? fetchPokemons(favoritePokemons): fetchPokemons();
+    
+  }
+
   return (
     <div>
       <div className="header">
-        <h1>Pokedex</h1>
+       <h2><button onClick={() => showFavorites()}>Favoritos</button></h2>
         <Pagination
           page={page + 1}
           totalPages={total}
@@ -31,7 +43,7 @@ const Pokedex = (props) => {
       ) : (
         <div className="card_container">
           {pokemons.map((pokemon, idx) => {
-            return <Pokemon pokemon={pokemon} key={pokemon.name} />;
+            return (<Pokemon pokemon={pokemon} key={pokemon.name} />);
           })}
         </div>
       )}

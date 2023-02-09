@@ -6,6 +6,7 @@ import Pokedex from "../../components/common/Pokedex";
 import { getPokemonData, getPokemons, searchPokemon } from "../../api";
 import { FavoriteProvider } from "../../components/layout/favoritesContext";
 import Footer from "../../components/layout/Footer";
+import { update } from "lodash";
 
 const { useState, useEffect } = React;
 
@@ -20,20 +21,48 @@ export default function App() {
   const [notFound, setNotFound] = useState(false);
   const [searching, setSearching] = useState(false);
 
-  const fetchPokemons = async () => {
+  let ifData = [{}];
+  const fetchPokemons = async (ifData) => {
     try {
+     
+      let promises;
+      let data;
       setLoading(true);
-      const data = await getPokemons(25, 25 * page);
-      const promises = data.results.map(async (pokemon) => {
-        return await getPokemonData(pokemon.url);
-      });
+      if(ifData){
+        console.log("#1");
+         promises = ifData.map(async (pokemon) => {
+        
+          return await getPokemonData(pokemon.url);
+        });
+      }else{
+        console.log("#2");
+        const data = await getPokemons(25, 25 * page);
+        promises = data.results.map(async (pokemon) => {
+         
+          return await getPokemonData(pokemon.url);
+        });
+        setTotal(Math.ceil(data.count / 25));
+      }
+     
       const results = await Promise.all(promises);
       setPokemons(results);
       setLoading(false);
-      setTotal(Math.ceil(data.count / 25));
+      
       setNotFound(false);
+   
     } catch (err) {}
   };
+
+  const  compareFavorites = (favList, favName) => {
+    const keys1 = Object.keys(favList);
+
+    for (let key of keys1) {
+      if (favList[key].name === favName) {
+        return key;
+      }
+    }
+    return -1;
+  }
 
   const loadFavoritePokemons = () => {
     const pokemons =
@@ -51,15 +80,19 @@ export default function App() {
     }
   }, [page]);
 
-  const updateFavoritePokemons = (name) => {
+  const  updateFavoritePokemons = (name) => {
     const updated = [...favorites];
-    const isFavorite = updated.indexOf(name);
+    const insertPoke = {name:name , url:`https://pokeapi.co/api/v2/pokemon/${name}/`};
+    const isFavorite =  compareFavorites(updated, name);
     if (isFavorite >= 0) {
+    
       updated.splice(isFavorite, 1);
     } else {
-      updated.push(name);
+    
+      updated.push(insertPoke);
     }
     setFavorites(updated);
+ 
     window.localStorage.setItem(localStorageKey, JSON.stringify(updated));
   };
 
@@ -91,7 +124,7 @@ export default function App() {
         updateFavoritePokemons: updateFavoritePokemons
       }}
     >
-      <div>
+      <div className="div_container_global">
         <Navbar />
         <div className="App">
           <Searchbar onSearch={onSearch} />
@@ -106,6 +139,9 @@ export default function App() {
               page={page}
               setPage={setPage}
               total={total}
+              setPokemons = {setPokemons}
+              favorites={favorites}
+              fetchPokemons={fetchPokemons}
             />
           )}
         </div>

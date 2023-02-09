@@ -11,7 +11,17 @@ const Pokemon = (props) => {
 
   const redHeart = "❤️";
   const blackHeart = "🖤";
-  const heart = favoritePokemons.includes(pokemon.name) ? redHeart : blackHeart;
+
+  const favoriteEvaluate = (name) => {
+    const keys = Object.keys(favoritePokemons);
+    for(let key in keys){
+      if(favoritePokemons[key].name===name){
+        return redHeart;
+      }
+    }
+    return blackHeart;
+  }
+  const heart = favoriteEvaluate(pokemon.name);
 
   const clickHeart = (e) => {
     e.preventDefault();
