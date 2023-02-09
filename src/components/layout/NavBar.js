@@ -17,6 +17,11 @@ const NavBar = () => {
         <div className="logo">
           <h2>WikiPokedex</h2>
         </div>
+        <button className="hamburger">
+          <div></div>
+          <div></div>
+          <div></div>
+        </button>
         <div className="menu-icon" onClick={handleShowNavbar}>
         <h2>☰</h2>
         </div>

@@ -63,13 +63,7 @@ code {
   padding: 10px;
 }
 
-.pokedex-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 18px;
-  padding: 0px 10px 20px 10px;
-  background-color: #fef7e5;
-}
+
 
 
 @media screen and (max-width: 992px) {
@@ -99,14 +93,6 @@ code {
   height: 70px;
 }
 
-.pokemon-type {
-  display: flex;
-}
-
-.pokemon-type-text {
-  margin-right: 10px;
-  text-transform: capitalize;
-}
 
 .card-body {
   display: flex;

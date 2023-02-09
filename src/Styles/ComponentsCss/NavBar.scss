@@ -100,3 +100,32 @@ color:blue;
     margin-top: 22px;
   }
 }
+.hamburger {
+ display: flex;
+ 
+ flex-direction: column;
+ width: 3rem;
+ height: 3rem;
+ border: 0;
+ background: transparent;
+ gap: 0.5rem;
+ 
+ 
+}
+.hamburger > div{
+  background-color: black;
+  height: 0.2rem;
+  width: 100%;
+  border-radius: 5rem;
+  transition: all .5s;
+  transform-origin: left;
+}
+.hamburger:hover div:first-child{
+  transform: rotate(45deg);
+}
+.hamburger:hover div:nth-child(2){
+  opacity: 0;
+}
+.hamburger:hover div:last-child{
+  transform: rotate(-45deg);
+}

@@ -32,23 +32,21 @@ const Pokemon = (props) => {
 }
 
   return (
-    <div className="card_container">
+    
       <div className="pokecard">
         <div className="card_header">
-        <h3>{pokemon.name}</h3>
-            
+        <h3 className="card_title">{pokemon.name}</h3>   
         </div>
+
         <div className="card_body">
         <img className="card_bodyimg" src={pokemon.sprites.front_default} alt={pokemon.name} />
         </div> 
-          <div className="card-top">
-            
-          </div>
-          <div className="card-bottom">
-            <div className="pokemon-type">
+          
+          <div className="card_footer">
+            <div className="pokemon_type">
               {pokemon.types.map((type, idx) => {
                 return (
-                  <div key={idx} className="pokemon-type-text">
+                  <div key={idx}>
                     
                     <li style={{background:getColor(idx), listStyle:"none"}} key={idx} className="list_type">{type.type.name}</li>
                   </div>
@@ -62,7 +60,7 @@ const Pokemon = (props) => {
           </div>
         
       </div>
-    </div>
+    
   );
 };
 
