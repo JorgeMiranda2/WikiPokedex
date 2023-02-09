@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
 }
 
 code {
@@ -16,7 +17,9 @@ code {
   margin: 0px;
 }
 
-
+.div_container_global{
+  background: #fef7e5;
+}
 
 .searchbar-container {
   display: flex;
@@ -25,10 +28,11 @@ code {
   align-items: center;
   flex: 1;
   align-items: stretch;
+  background: #fef7e5;
 }
 
 .searchbar {
-  background: white;
+  background: #fef7e5;
   padding-right: 20px;
   flex: 1;
 }
@@ -61,6 +65,7 @@ code {
   justify-content: space-between;
   align-items: center;
   padding: 10px;
+  background: #fef7e5;
 }
 
 .pokedex-grid {
