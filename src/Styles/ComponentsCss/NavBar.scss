@@ -26,12 +26,6 @@
 }
 
 
-.menu-icon {
-  display: none;
-}
-
-
-
 .nav-elements ul {
   display: flex;
   justify-content: space-between;
@@ -62,17 +56,15 @@
   width: 100%;
   height: 2px;
   background-color: #fff;
-color:blue;
+  color:blue;
+  
 }
 
 
 
 
 @media (max-width: 768px) {
-  .menu-icon {
-    display: block;
-    cursor: pointer;
-  }
+  
 
   .nav-elements {
     position: absolute;
@@ -88,6 +80,7 @@ color:blue;
 
   .nav-elements.active {
     width: 270px;
+    z-index: 4;
   }
 
   .nav-elements ul {
@@ -100,32 +93,40 @@ color:blue;
     margin-top: 22px;
   }
 }
-.hamburger {
- display: flex;
- 
- flex-direction: column;
- width: 3rem;
- height: 3rem;
- border: 0;
- background: transparent;
- gap: 0.5rem;
- 
- 
+.hamburger{
+  display: none;
 }
-.hamburger > div{
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    width: 3rem;
+    height: 3rem;
+    border: 0;
+    background: transparent;
+    gap: 0.5rem;
+    margin-top: 0.6rem;
+   
+  }
+  
+  .hamburger > div{
   background-color: black;
   height: 0.2rem;
   width: 100%;
+  
   border-radius: 5rem;
   transition: all .5s;
   transform-origin: left;
-}
-.hamburger:hover div:first-child{
-  transform: rotate(45deg);
-}
-.hamburger:hover div:nth-child(2){
+  }
+  .hamburger:hover div:first-child{
+  transform: rotate(40deg);
+  }
+  .hamburger:hover div:nth-child(2){
   opacity: 0;
-}
-.hamburger:hover div:last-child{
-  transform: rotate(-45deg);
+  }
+  .hamburger:hover div:last-child{
+  transform: rotate(-40deg);
+  }
 }

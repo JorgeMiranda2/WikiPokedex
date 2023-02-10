@@ -3,6 +3,7 @@ import FavoriteContext from "../layout/favoritesContext";
 import React, { useContext, useState } from "react";
 import Pagination from "./Pagination";
 import Pokemon from "./PokeCard";
+import '../../../src/Styles/ComponentsCss/Favorites.scss';
 
 const Pokedex = (props) => {
   const { pokemons, page, setPage, total, loading, fetchPokemons } = props;
@@ -30,7 +31,7 @@ const Pokedex = (props) => {
   return (
     <div>
       <div className="header">
-       <h2><button onClick={() => showFavorites()}>Favoritos</button></h2>
+       <span><button className="button_favorite" onClick={() => showFavorites()}>Favoritos</button></span>
         <Pagination
           page={page + 1}
           totalPages={total}
